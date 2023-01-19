@@ -1,0 +1,11 @@
+{
+    "name": "MenuItem",
+    "alias": "menuitem",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\MenuItem\\Providers\\MenuItemServiceProvider"
+    ],
+    "files": []
+}
