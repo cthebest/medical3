@@ -43,6 +43,8 @@ Route::middleware(['web', 'guest'])->group(function () {
     Route::get('articles/{id}', [ArticleController::class, 'show'])->name('articles.id');
     Route::get('articles/public', [ArticleController::class, 'indexPublicArticle'])->name('articles');
     Route::get('contacts', [ContactController::class, 'create'])->name('contacts');
+    Route::post('contacts', [ContactController::class, 'send'])->name('contacts.send');
+
 });
 
 //authenticated

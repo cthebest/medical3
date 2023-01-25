@@ -12,7 +12,7 @@ class UrlGenerator
         if (!$menuItem) {
             $menuItem = $this->getMenuItem($moduleId);
 
-            $url = $menuItem->path . '/' . $model->alias;
+            $url = $menuItem?->path . '/' . $model->alias;
         } else {
             $url = $menuItem->path;
         }
@@ -28,6 +28,7 @@ class UrlGenerator
         } else {
             $query->whereNull('association->resource_id');
         }
+        //dd($query);
         return $query->first();
     }
 }

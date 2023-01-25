@@ -2,12 +2,9 @@
     @section('content')
         <div>
             <livewire:service::index-service />
-            <section class="bg-[#edfdcb]">
-                <div class="container mx-auto py-10 space-y-4">
-                    <h1 class="text-[#006699] text-4xl">Nuestras últimas publicaciones</h1>
-                    <livewire:article::index-articles />
-                </div>
-            </section>
+
+            <livewire:article::index-articles />
+
 
             <section class="space-y-4">
                 <iframe

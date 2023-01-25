@@ -1,9 +1,9 @@
-@props(['image', 'title', 'description', 'date', 'publication_url', 'class'])
+@props(['image', 'title', 'description', 'date', 'publication_url', 'image_class'])
 
 <div class="bg-white rounded-lg overflow-hidden">
     @if ($image)
         <div class="flex justify-center">
-            <img class="{{ $class }}" src="{{ storage_url($image) }}" alt="Image">
+            <img class="{{ $image_class }}" src="{{ storage_url($image) }}" alt="Image">
         </div>
     @endif
     <div class="p-4">
