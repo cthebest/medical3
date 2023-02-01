@@ -41,6 +41,12 @@ class UserDatabaseSeeder extends Seeder
         Permission::firstOrCreate(['name' => 'edit_menus', 'label' => 'Editar ítem de menús', 'module' => 'Menús']);
         Permission::firstOrCreate(['name' => 'delete_menus', 'label' => 'Eliminar ítem de menús', 'module' => 'Menús']);
 
+        // Agenda module.
+        Permission::firstOrCreate(['name' => 'view_calendar', 'label' => 'Ver calendario', 'module' => 'Agenda']);
+        Permission::firstOrCreate(['name' => 'view_working_hour', 'label' => 'Ver horario laboral', 'module' => 'Agenda']);
+        Permission::firstOrCreate(['name' => 'add_working_hour', 'label' => 'Añadir horario laboral', 'module' => 'Agenda']);
+        Permission::firstOrCreate(['name' => 'edit_working_hour', 'label' => 'Editar horario laboral', 'module' => 'Agenda']);
+        Permission::firstOrCreate(['name' => 'set_appointment_time', 'label' => 'Configurar duración de la cita', 'module' => 'Agenda']);
 
         //create developer uncomment to use when seeding
 
@@ -68,5 +74,6 @@ class UserDatabaseSeeder extends Seeder
             'role_id' => $role->id,
             'user_id' => $user->id
         ]);
+
     }
 }

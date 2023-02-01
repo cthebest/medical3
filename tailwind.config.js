@@ -2,7 +2,7 @@ module.exports = {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
+        './resources/views/**/*.blade.php'
     ],
     safelist: [
         {
@@ -18,12 +18,13 @@ module.exports = {
             textColors: {
                 primary: '#5A67D8'
             },
-            backgroundImage:{
+            backgroundImage: {
                 'header-clinic': "url('../../public/imgs/banner1_070152.jpg')",
             }
         },
     },
     plugins: [
-        require('@tailwindcss/typography')
+        require('@tailwindcss/typography'),
+        require('@tailwindcss/aspect-ratio')
     ],
 };

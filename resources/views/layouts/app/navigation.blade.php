@@ -12,7 +12,7 @@
             $applicationLogo = Cache::rememberForever('applicationLogo', function () {
                 return \App\Models\Setting::where('key', 'applicationLogo')->value('value');
             });
-            
+
             $applicationLogoDark = Cache::rememberForever('applicationLogoDark', function () {
                 return \App\Models\Setting::where('key', 'applicationLogoDark')->value('value');
             });
@@ -58,13 +58,13 @@
 @endif
 
 @if (can('view_menus'))
-    <x-nav.group-item route="menuitems.index" icon="far fa-circle">Menu</x-nav.group-item>
+    <x-nav.link route="menuitems.index" icon="far fa-circle">Menu</x-nav.link>
 @endif
 
 @if (can('view_articles'))
-    <x-nav.group-item route="articles.index" icon="far fa-circle">Artículos</x-nav.group-item>
+    <x-nav.link route="articles.index" icon="far fa-circle">Artículos</x-nav.link>
 @endif
 
 @if (can('view_services'))
-    <x-nav.group-item route="services.index" icon="far fa-circle">Servicios</x-nav.group-item>
+    <x-nav.link route="services.index" icon="far fa-circle">Servicios</x-nav.link>
 @endif

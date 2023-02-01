@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\JoinController;
 use App\Http\Controllers\Auth\LoginController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\TwoFaController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\WorkingHourController;
 use App\Http\Livewire\Admin\AuditTrails;
 use App\Http\Livewire\Admin\Dashboard;
 use App\Http\Livewire\Admin\Roles\Edit;
@@ -64,6 +66,12 @@ Route::middleware(['web', 'auth', 'activeUser', 'IpCheckMiddleware'])->prefix('a
     Route::get('users', Users::class)->name('admin.users.index');
     Route::get('users/{user}/edit', EditUser::class)->name('admin.users.edit');
     Route::get('users/{user}', ShowUser::class)->name('admin.users.show');
+
+    Route::get('agenda', [AgendaController::class, 'index'])->name('agenda.index');
+
+    Route::get('agenda/working-hours/{specialist}', [WorkingHourController::class, 'index'])->name('working-hours.index');
+    Route::get('agenda/working-hours/{specialist}/create', [WorkingHourController::class, 'create'])->name('working-hours.create');
+    Route::get('agenda/working-hours/{specialist}/edit', [WorkingHourController::class, 'edit'])->name('working-hours.edit');
 });
 
 //Admin only routes
